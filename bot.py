@@ -9,7 +9,7 @@ from vnstock import *
 TOKEN = '8625301702:AAHLOJgz_fIkfA6WpU7Sr60KjRIzc7nmHR4'
 CHAT_ID = '1736294695'
 
-bot = telebot.TeleBot(' 8625301702:AAHLOJgz_fIkfA6WpU7Sr60KjRIzc7nmHR4')
+bot = telebot.TeleBot('8625301702:AAHLOJgz_fIkfA6WpU7Sr60KjRIzc7nmHR4')
 vn_tz = pytz.timezone('Asia/Ho_Chi_Minh')
 
 # DANH SÁCH 120 MÃ TỔNG HỢP
