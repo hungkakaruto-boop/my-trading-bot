@@ -1,0 +1,27 @@
+name: Run Trading Bot
+
+on:
+  schedule:
+    # Chạy lúc 2:00 UTC (tức 9:00 sáng VN) mỗi ngày từ thứ 2 đến thứ 6
+    - cron: '0 2 * * 1-5'
+  workflow_dispatch: # Cho phép bạn bấm nút chạy tay nếu muốn
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install libraries
+        run: pip install pyTelegramBotAPI pandas_ta vnstock pytz
+
+      - name: Run bot
+        run: python bot.py
+        env:
+          PYTHONUNBUFFERED: 1
